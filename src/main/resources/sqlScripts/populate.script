@@ -1,0 +1,106 @@
+INSERT INTO company
+VALUES (1, 'CompanyIT', 'Grushevska 11', 'Ukraine');
+INSERT INTO company
+VALUES (2, 'IT_incorporation', 'Vaselkivska 1', 'Ukraine');
+INSERT INTO company
+VALUES (3, 'MicroIT', 'Zelena 103A', 'Ukraine');
+INSERT INTO company
+VALUES (4, 'AltMicSerV', 'Svoboda 1A', 'Ukraine');
+INSERT INTO company
+VALUES (5, 'GamesWorld', 'Pushkinska 19', 'Ukraine');
+
+INSERT INTO department
+VALUES (1, 'HR', 1, 'HR department');
+INSERT INTO department
+VALUES (2, 'Marketing', 1, 'Marketing Department');
+INSERT INTO department
+VALUES (3, 'Technical', 1, 'Technical Department');
+INSERT INTO department
+VALUES (4, 'PM', 1, 'Project Manager Department');
+
+INSERT INTO department
+VALUES (5, 'GameDev', 2, 'Game developer department');
+INSERT INTO department
+VALUES (6, 'Engineering', 2, 'Engineering Department');
+INSERT INTO department
+VALUES (7, 'Transportation', 2, 'Transportation Department');
+INSERT INTO department
+VALUES (8, 'IT', 2, 'IT Department');
+
+INSERT INTO department
+VALUES (9, 'GameDev', 3, 'Game developer department');
+INSERT INTO department
+VALUES (10, 'PM', 3, 'Project Manager Department');
+INSERT INTO department
+VALUES (11, 'Finance', 3, 'Finance Department');
+INSERT INTO department
+VALUES (12, 'Transportation', 3, 'Transportation Department');
+INSERT INTO department
+VALUES (13, 'Contracts', 3, 'Contracts Department');
+
+INSERT INTO department
+VALUES (14, 'Planning', 4, 'Planning department');
+INSERT INTO department
+VALUES (15, 'Technical', 4, 'Technical Department');
+INSERT INTO department
+VALUES (16, 'Finance', 4, 'Finance Department');
+INSERT INTO department
+VALUES (17, 'Transportation', 4, 'Transportation Department');
+INSERT INTO department
+VALUES (18, 'IT', 4, 'IT Department');
+
+INSERT INTO department
+VALUES (19, 'Controller', 5, 'Controller department');
+INSERT INTO department
+VALUES (20, 'Production', 5, 'Production Department');
+INSERT INTO department
+VALUES (21, 'Finance', 5, 'Finance Department');
+INSERT INTO department
+VALUES (22, 'Support', 5, 'Support Department');
+INSERT INTO department
+VALUES (23, 'Contracts', 5, 'Contracts Department');
+
+INSERT INTO employees VALUES (1, 'Steven', 'King', null, 28, 36400000, 1);
+INSERT INTO employees VALUES (2, 'Neena', 'Kochhar', null, 38, 37400000, 1);
+INSERT INTO employees VALUES (3, 'Lex', 'De Haan', null, 21, 37340000, 2);
+INSERT INTO employees VALUES (4, 'Alexander', 'Hunold', 'Valerevich', 34, 37440000, 2);
+INSERT INTO employees VALUES (5, 'Bruce', 'Ernst', null, 56, 37445000, 3);
+INSERT INTO employees VALUES (6, 'David', 'Austin', null, 41, 47446700, 3);
+INSERT INTO employees VALUES (7, 'Valli', 'Pataballa', null, 22, 67640800, 4);
+INSERT INTO employees VALUES (8, 'Diana', 'Lorentz', null, 55, 75440000, 4);
+INSERT INTO employees VALUES (9, 'Nancy', 'Greenberg', null, 43, 39440000, 5);
+INSERT INTO employees VALUES (10, 'Daniel', 'Faviet', null, 37, 43440000, 5);
+INSERT INTO employees VALUES (11, 'John', 'Chen', null, 43, 33440000, 6);
+INSERT INTO employees VALUES (12, 'Ismael', 'Sciarra', null, 50, 37443000, 6);
+INSERT INTO employees VALUES (13, 'Jose Manuel', 'Urman', null, 31, 37445670, 7);
+INSERT INTO employees VALUES (14, 'Luis', 'Popp', null, 23, 39440080, 7);
+INSERT INTO employees VALUES (15, 'Den', 'Shelupets', 'Olegovich', 34, 31240000, 8);
+INSERT INTO employees VALUES (16, 'Alexander', 'Khoo', null, 35, 47140000, 8);
+INSERT INTO employees VALUES (17, 'Shelli', 'Baida', null, 36, 57445680, 9);
+INSERT INTO employees VALUES (18, 'Sigal', 'Tobias', null, 37, 16640000, 9);
+INSERT INTO employees VALUES (19, 'Guy', 'Himuro', null, 32, 85440500, 10);
+INSERT INTO employees VALUES (20, 'Karen', 'Colmenares', null, 33, 37470600, 10);
+INSERT INTO employees VALUES (21, 'Matthew', 'Weiss', null, 21, 37440000, 11);
+INSERT INTO employees VALUES (22, 'Adam', 'Fripp', null, 22, 77440000, 11);
+INSERT INTO employees VALUES (23, 'Payam', 'Kaufling', null, 32, 37440000, 12);
+INSERT INTO employees VALUES (24, 'Shanta', 'Vollman', null, 37, 37440000, 12);
+INSERT INTO employees VALUES (25, 'Kevin', 'Mourgos', null, 40, 37440000, 13);
+INSERT INTO employees VALUES (26, 'Julia', 'Nayer', null, 41, 37440000, 13);
+INSERT INTO employees VALUES (27, 'Irene', 'Mikkilineni', null, 43, 37440000, 14);
+INSERT INTO employees VALUES (28, 'James', 'Landry', null, 43, 37440000, 14);
+INSERT INTO employees VALUES (29, 'Steven', 'Markle', null, 52, 37440000, 15);
+INSERT INTO employees VALUES (30, 'Laura', 'Bissot', null, 31, 37440000, 15);
+INSERT INTO employees VALUES (31, 'Mozhe', 'Atkinson', null, 42, 907440000, 16);
+INSERT INTO employees VALUES (32, 'James', 'Marlow', null, 26, 994740000, 16);
+INSERT INTO employees VALUES (33, 'TJ', 'Olson', null, 27, 994494000, 17);
+INSERT INTO employees VALUES (34, 'Jason', 'Mallin', null, 28, 99909000, 17);
+INSERT INTO employees VALUES (35, 'Michael', 'Rogers', null, 28, 89440000, 18);
+INSERT INTO employees VALUES (36, 'Ki', 'Gee', null, 26, 563440000, 18);
+INSERT INTO employees VALUES (37, 'Hazel', 'Philtanker', null, 23, 98760000, 19);
+INSERT INTO employees VALUES (38, 'Renske', 'Ladwig', null, 23, 56780000, 19);
+INSERT INTO employees VALUES (39, 'Stephen', 'Stiles', null, 51, 59740000, 20);
+INSERT INTO employees VALUES (40, 'John', 'Seo', null, 54, 39990000, 20);
+INSERT INTO employees VALUES (41, 'Joshua', 'Patel', null, 44, 33440000, 21);
+INSERT INTO employees VALUES (42, 'Trenna', 'Rajs', null, 56, 37440700, 21);
+INSERT INTO employees VALUES (43, 'Curtis', 'Davies', null, 50, 37443000, 22);
+INSERT INTO employees VALUES (44, 'Randall', 'Matos', null, 45, 37460000, 22);
