@@ -2,6 +2,7 @@ package com.csLtd.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -10,6 +11,7 @@ import javax.persistence.*;
  */
 @Getter
 @Setter
+@ToString
 @Entity
 @Table(name = "company")
 public class Company {

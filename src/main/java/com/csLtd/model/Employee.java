@@ -2,6 +2,7 @@ package com.csLtd.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -12,6 +13,7 @@ import javax.persistence.*;
 @Getter
 @Entity
 @Table(name = "employees")
+@ToString
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
