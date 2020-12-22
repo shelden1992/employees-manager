@@ -1,8 +1,6 @@
 package com.csLtd.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -12,6 +10,8 @@ import javax.persistence.*;
 @Setter
 @Getter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "employees")
 @ToString
 public class Employee {
@@ -27,5 +27,3 @@ public class Employee {
     @JoinColumn(name = "department_id", referencedColumnName = "id")
     private Department department;
 }
-
-

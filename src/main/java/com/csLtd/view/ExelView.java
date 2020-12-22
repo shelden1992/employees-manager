@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -23,17 +24,23 @@ import static java.util.Objects.nonNull;
 /**
  * Created by Shelupets Denys on 22.12.2020.
  */
+@Scope("prototype")
 @Component
 @PropertySource("classpath:value.properties")
 public class ExelView implements View {
     private final Logger LOG = LoggerFactory.getLogger(ExelView.class);
     private final DecimalFormat decimalFormat = new DecimalFormat("###,###.##");
     private final FormatterService formatterService;
+    private final AtomicInteger numberRows = new AtomicInteger(2);
     @Value("${file.save.path}")
     private String path;
 
     public ExelView(FormatterService formatterService) {
         this.formatterService = formatterService;
+    }
+
+    public int getNumberRows() {
+        return numberRows.get() - 2;
     }
 
     @Override
@@ -72,11 +79,10 @@ public class ExelView implements View {
             headerCell.setCellValue("Название департамента");
             headerCell.setCellStyle(headerStyle);
 
-            AtomicInteger numberRow = new AtomicInteger(2);
             employeeList.forEach(employee -> {
                         CellStyle style = workbook.createCellStyle();
                         style.setWrapText(true);
-                        Row row = sheet.createRow(numberRow.getAndIncrement());
+                        Row row = sheet.createRow(numberRows.getAndIncrement());
                         Cell cell = row.createCell(0);
                         cell.setCellValue(employee.getLastName() + " " + employee.getFirstName() + " " + " " + (nonNull(employee.getMiddleName()) ? employee.getMiddleName() : ""));
                         cell.setCellStyle(style);
@@ -96,7 +102,7 @@ public class ExelView implements View {
             );
             CellStyle style = workbook.createCellStyle();
             style.setWrapText(true);
-            Row row = sheet.createRow(numberRow.get() + 1);
+            Row row = sheet.createRow(numberRows.get() + 1);
 
             Cell cell = row.createCell(1);
             cell.setCellValue(formatterService.getFormattedStringCompanyNameAndCountEmployees(employeeList));
@@ -112,7 +118,7 @@ public class ExelView implements View {
 
             try (FileOutputStream outputStream = new FileOutputStream(new File(path).getAbsolutePath())) {
                 workbook.write(outputStream);
-                LOG.debug("Wrote " + (numberRow.get() - 2) + " items");
+                LOG.debug("Wrote " + (numberRows.get() - 2) + " items");
             } catch (IOException e) {
                 LOG.error(e.getMessage(), e);
             }
