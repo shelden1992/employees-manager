@@ -1,10 +1,11 @@
 package com.csLtd.controller;
 
 import com.csLtd.model.Employee;
-import com.csLtd.service.EmployeeService;
-import com.csLtd.view.View;
+import com.csLtd.service.employee.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -12,19 +13,19 @@ import java.util.List;
 /**
  * Created by Shelupets Denys on 22.12.2020.
  */
-@Controller
+@RestController("employee")
+@RequestMapping("/employee")
 public class EmployeeController {
     private EmployeeService employeeService;
-    private View exelView;
 
     @Autowired
-    public EmployeeController(EmployeeService employeeService, View exelView) {
+    public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
-        this.exelView = exelView;
     }
 
-    public void findAllEmployeesAndSendToView() {
-        List<Employee> employeeList = employeeService.findAllSortByFullName();
-        exelView.outAllEmployees(employeeList);
+
+    @RequestMapping("/findAll")
+    public ResponseEntity<List<Employee>> findAllEmployeesAndSendToView() {
+        return employeeService.findAllEmployees();
     }
 }

@@ -1,11 +1,13 @@
-package com.csLtd.service;
+package com.csLtd.service.employee.impl;
 
-import com.csLtd.dao.EmployeeRepository;
+import com.csLtd.dao.employee.EmployeeRepository;
 import com.csLtd.model.Employee;
+import com.csLtd.service.employee.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -21,14 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public List<Employee> findAll() {
-        return employeeRepository.findAll();
-    }
-
-    @Override
-    public List<Employee> findAllSortByFullName() {
-        List<Employee> employeeList = findAll();
-        employeeList.sort(Comparator.comparing(Employee::getLastName).thenComparing(Employee::getFirstName).thenComparing(Employee::getMiddleName));
-        return employeeList;
+    public ResponseEntity<List<Employee>> findAllEmployees() {
+        return new ResponseEntity<>(employeeRepository.findAll(), HttpStatus.OK);
     }
 }

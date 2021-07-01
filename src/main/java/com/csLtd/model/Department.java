@@ -7,9 +7,7 @@ import javax.persistence.*;
 /**
  * Created by Shelupets Denys on 21.12.2020.
  */
-@Getter
-@Setter
-@ToString
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity

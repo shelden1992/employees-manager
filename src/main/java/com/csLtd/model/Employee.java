@@ -4,16 +4,15 @@ import lombok.*;
 
 import javax.persistence.*;
 
+
 /**
  * Created by Shelupets Denys on 21.12.2020.
  */
-@Setter
-@Getter
-@Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "employees")
-@ToString
+@Entity
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

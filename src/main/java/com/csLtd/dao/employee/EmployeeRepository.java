@@ -1,4 +1,4 @@
-package com.csLtd.dao;
+package com.csLtd.dao.employee;
 
 import com.csLtd.model.Employee;
 import org.springframework.data.repository.CrudRepository;
